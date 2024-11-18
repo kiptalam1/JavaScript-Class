@@ -4,9 +4,11 @@ class Square {
     constructor (_width) {
         this.width = _width;
         this.height = _width;
+        this.numberOfRequestsForArea = 0;
     }
     // Getter
     get area () {
+        this,this.numberOfRequestsForArea++;
         return this.width * this.height;
     }
     // Setter
@@ -22,5 +24,12 @@ let square1 = new Square(6);
 console.log(square1.area); // 36
 
 square1.area = 49;
-console.log(square1.width); // 7
-console.log(square1.height); // 7
+// console.log(square1.width); // 7
+// console.log(square1.height); // 7
+console.log(square1.area);
+console.log(square1.area);
+console.log(square1.area);
+console.log(square1.area);
+console.log(square1.area);
+
+console.log("Number of requests:", square1.numberOfRequestsForArea); // 6.
